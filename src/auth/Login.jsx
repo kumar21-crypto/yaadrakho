@@ -22,13 +22,13 @@ const Login = () => {
   }
 
   return (
-     <div className="min-h-screen grid place-items-center px-4">
-      
-      <form onSubmit={onSubmit} className="glass w-full max-w-sm p-6">
-        <div className='text-center'>
+     <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-purple-400 to-blue-500 p-4">
+      <div>
         <img src="https://cdn-icons-png.flaticon.com/512/9227/9227549.png" alt="Logo" className="h-16 w-16 mb-4 mx-auto" />
         <h2 className="text-3xl font-bold text-center mb-6">Yaadrakho</h2>
       </div>
+      <form onSubmit={onSubmit} className="glass w-full max-w-sm p-6">
+        
         <h1 className="text-2xl font-semibold mb-6">Welcome back</h1>
         {error && <p className="text-red-600 mb-3">{error}</p>}
         <input className="w-full mb-3 input" placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)} />
