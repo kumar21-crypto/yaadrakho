@@ -71,7 +71,7 @@ const Dashboard = () => {
     const doc = await createNote(user.$id, {
       type: "checklist",
       title: "Checklist",
-      items: "",
+      items: "[]",
       tags: "",
     });
     setNotes((prev) => [doc, ...prev]);
