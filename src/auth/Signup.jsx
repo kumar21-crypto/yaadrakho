@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useAuth } from './AuthContext'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Signup = () => {
 
@@ -35,6 +35,7 @@ const Signup = () => {
         <input className="w-full mb-3 input" placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)} />
         <input className="w-full mb-3 input" placeholder="Password" type="password" value={password} onChange={e=>setPassword(e.target.value)} />
         <button className="w-full py-2 rounded-xl bg-black text-white">Sign up</button>
+        <p className="mt-3 text-sm text-center">Already have an account? <Link className="underline" to="/login">Login</Link></p>
       </form>
     </div>
   )
