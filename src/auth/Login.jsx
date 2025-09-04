@@ -15,7 +15,8 @@ const Login = () => {
     setError("");
     try {
       await login(email, password);
-      nav("/app", { replace: true });
+      window.location.href = "/app";
+
     } catch (err) {
       setError(err.message || "Login failed" );
     }
