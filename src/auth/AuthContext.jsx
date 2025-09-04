@@ -35,9 +35,20 @@ export function AuthProvider ({ children }) {
     name:name
   });
 
-  const logout = () => account.deleteSession({
-    sessionId: 'current'
-  })
+  const logout = async () => {
+  try {
+    await account.deleteSession('current');
+  } catch (err) {
+    // Ignore 401 errors (already logged out)
+    if (err.code !== 401) {
+      console.error(err);
+    }
+  } finally {
+    setUser(null);
+    // Optionally, redirect to login page if using react-router
+    window.location.href = "/login";
+  }
+};
 
   return (
     <Ctx.Provider value={{ user, loading, login, signup, logout }}>
